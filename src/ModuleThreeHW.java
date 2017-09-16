@@ -5,37 +5,37 @@ public class ModuleThreeHW {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размер масива ");
 
-        int[] a = new int[scanner.nextInt()];                           //задаем размер масива
+        int[] arrayInt = new int[scanner.nextInt()];                           //задаем размер масива
 
 
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < arrayInt.length; i++) {
             System.out.print("введите " + (i + 1) + "-е значение массива -");
-            a[i] = scanner.nextInt();
+            arrayInt[i] = scanner.nextInt();
         }
-        int max = a[0];
-        int min = a[0];
+        int max = arrayInt[0];
+        int min = arrayInt[0];
         int num5 = 0;
 
-        for (int i = 0; i<a.length; i++) {              // ищем макс, мин и количество 5-ок
+        for (int i = 0; i<arrayInt.length; i++) {              // ищем макс, мин и количество 5-ок
 
-            System.out.println(a[i] + "; ");              //не можем начать смотреть цикл с а[1] из-за этого
+            System.out.println(arrayInt[i] + "; ");              //не можем начать смотреть цикл с а[1] из-за этого
 
-            if (a[i] > max) {
-                max = a[i];
+            if (arrayInt[i] > max) {
+                max = arrayInt[i];
             }
-            if (a[i] < min) min=a[i];
-            if (a[i] == 5) num5++;
+            if (arrayInt[i] < min) min=arrayInt[i];
+            if (arrayInt[i] == 5) num5++;
         }
         System.out.printf("Максимальное значение = %d. Минимальное значение = %d. \n5 повторялась %d раз\n", max, min, num5 );
 
-        for (int j = 0; j < a.length; j++){             //сортируем
+        for (int j = 0; j < arrayInt.length; j++){             //сортируем
             boolean stop = true;
 
-            for (int i = 0; i < a.length-1; i++){
-                if (a[i] > a[i+1]) {                    //swap
-                    int temp = a[i];
-                    a[i] = a[i+1];
-                    a[i+1] = temp;
+            for (int i = 0; i < arrayInt.length-1; i++){
+                if (arrayInt[i] > arrayInt[i+1]) {                    //swap
+                    int temp = arrayInt[i];
+                    arrayInt[i] = arrayInt[i+1];
+                    arrayInt[i+1] = temp;
                     stop = false;
                 }
 
@@ -44,22 +44,22 @@ public class ModuleThreeHW {
                 break;}
         }
         System.out.println("Отсортированый масив: ");
-        for (int i = 0; i < a.length; i++)
-            if (i != a.length-1 ) {
-                System.out.print(a[i] + "; ");
+        for (int i = 0; i < arrayInt.length; i++)
+            if (i != arrayInt.length-1 ) {
+                System.out.print(arrayInt[i] + "; ");
             }
             else {
-                System.out.println(a[i] + ".");
+                System.out.println(arrayInt[i] + ".");
             }
         int maxcount = 0;
         int mincount = Integer.MAX_VALUE;
-        for (int j = 0; j < a.length; j++) {            //начало поиска количиства повторений
-            int temp = a[j];
+        for (int j = 0; j < arrayInt.length; j++) {            //начало поиска количиства повторений
+            int temp = arrayInt[j];
 
             int count = 0;
 
-            for (int i = 0; i < a.length; i++) {
-                if (temp == a[i]) count++;
+            for (int i = 0; i < arrayInt.length; i++) {
+                if (temp == arrayInt[i]) count++;
 
             }
             if (mincount > count) mincount = count;
