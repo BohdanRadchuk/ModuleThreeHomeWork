@@ -4,9 +4,8 @@ public class ModuleThreeHW {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размер масива ");
-        int x = scanner.nextInt();
 
-        int[] a = new int[x];                           //задаем размер масива
+        int[] a = new int[scanner.nextInt()];                           //задаем размер масива
 
 
         for (int i = 0; i < a.length; i++) {
@@ -27,7 +26,7 @@ public class ModuleThreeHW {
             if (a[i] < min) min=a[i];
             if (a[i] == 5) num5++;
         }
-        System.out.printf("Максимальное значение = %d Минимальное значение = %d; \n5 повторялась %d раз\n", max, min, num5 );
+        System.out.printf("Максимальное значение = %d. Минимальное значение = %d. \n5 повторялась %d раз\n", max, min, num5 );
 
         for (int j = 0; j < a.length; j++){             //сортируем
             boolean stop = true;
@@ -46,7 +45,7 @@ public class ModuleThreeHW {
         }
         System.out.println("Отсортированый масив: ");
         for (int i = 0; i < a.length; i++)
-            if (i != x-1 ) {
+            if (i != a.length-1 ) {
                 System.out.print(a[i] + "; ");
             }
             else {
