@@ -53,18 +53,21 @@ public class ModuleThreeHW {
                 System.out.println(a[i] + ".");
             }
         int maxcount = 0;
+        int mincount = Integer.MAX_VALUE;
+        for (int j = 0; j < a.length; j++) {            //начало поиска количиства повторений
+            int temp = a[j];
 
-        for (int j = 0; j < a.length; j++) {
-            int t = a[j];
             int count = 0;
 
-            for (int i = 0; i < a.length - 1; i++) {
-                if (t == a[i]) count++;
+            for (int i = 0; i < a.length; i++) {
+                if (temp == a[i]) count++;
 
             }
+            if (mincount > count) mincount = count;
             if (maxcount < count) maxcount = count;
         }
         System.out.println("одно и тоже значение повторялось максимум " +  maxcount + " раз.");
+        System.out.println("одно и тоже значение повторялось минимум " +  mincount + " раз.");
     }
 
 }
