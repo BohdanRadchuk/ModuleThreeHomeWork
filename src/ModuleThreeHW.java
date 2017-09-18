@@ -27,11 +27,13 @@ public class ModuleThreeHW {
             if (arrayInt[i] == 5) num5++;
         }
         System.out.printf("Максимальное значение = %d. Минимальное значение = %d. \n5 повторялась %d раз\n", max, min, num5 );
-
+        int count = 0;
         for (int j = 0; j < arrayInt.length; j++){             //сортируем
             boolean stop = true;
 
-            for (int i = 0; i < arrayInt.length-1; i++){
+            count++;
+
+            for (int i = 0; i < arrayInt.length-count; i++){
                 if (arrayInt[i] > arrayInt[i+1]) {                    //swap
                     int temp = arrayInt[i];
                     arrayInt[i] = arrayInt[i+1];
@@ -56,7 +58,7 @@ public class ModuleThreeHW {
         for (int j = 0; j < arrayInt.length; j++) {            //начало поиска количиства повторений
             int temp = arrayInt[j];
 
-            int count = 0;
+            count = 0;
 
             for (int i = 0; i < arrayInt.length; i++) {
                 if (temp == arrayInt[i]) count++;

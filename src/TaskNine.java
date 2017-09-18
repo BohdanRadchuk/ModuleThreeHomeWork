@@ -27,11 +27,11 @@ public class TaskNine {
             if (arrayInt.get(i) == 5) num5++;
         }
         System.out.printf("Максимальное значение = %d. Минимальное значение = %d. \n5 повторялась %d раз\n", max, min, num5 );
-
+        int count = 0;
         for (int j = 0; j < arrayInt.size(); j++){             //сортируем
             boolean stop = false;
-
-            for (int i = 0; i < arrayInt.size()-1; i++){
+            count++;
+            for (int i = 0; i < arrayInt.size()-count; i++){
                 if (arrayInt.get(i) > arrayInt.get(i+1)) {                    //swap
                     int temp = arrayInt.get(i);
                     arrayInt.set(i,arrayInt.get(i+1) );
@@ -56,7 +56,7 @@ public class TaskNine {
         for (int j = 0; j < arrayInt.size(); j++) {            //начало поиска количиства повторений
             int temp = arrayInt.get(j);
 
-            int count = 0;
+            count = 0;
 
             for (int i = 0; i < arrayInt.size(); i++) {
                 if (temp == arrayInt.get(i)) count++;
